@@ -8,6 +8,9 @@ import { Component, VERSION } from '@angular/core';
 export class AppComponent {
   name = 'Angular  ' + VERSION.major;
   name1 = '';
+  isDanger = false;
+  isWarning = false;
+  currentProgress = 50;
 
   // DATABIDING
   // <input [type]="inputText" [value]="user.name">
@@ -21,7 +24,22 @@ export class AppComponent {
   Click(event: any) {
     console.log('Click me event handler', event);
   }
-
+  Classes = '';
+  isShow = false;
+  Show() {
+    this.isShow = !this.isShow;
+    if (this.isShow) {
+      this.Classes = 'box red-border yellow-background';
+    } else {
+      this.Classes = '';
+    }
+  }
+  UpdateProgress() {
+    this.currentProgress += 10;
+    if (this.currentProgress > 100) {
+      this.currentProgress = 10;
+    }
+  }
   users = [
     {
       id: 1,

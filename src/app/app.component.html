@@ -31,6 +31,19 @@ Age : {{ user.age }}
 <br /><br />
 
 <hello name="Dung ngFor with option to export user of users list"> </hello>
+<!-- 
+<li
+*ngFor="
+  let user of users;
+  index as idx;
+  count as total;
+  first as isFirst;
+  last as isLast;
+  even as isEven;
+  odd as isOdd
+"
+> -->
+
 <ul>
   <li
     *ngFor="
@@ -61,6 +74,18 @@ Age : {{ user.age }}
 </ul>
 <br />
 <hello name="Dung ngFor with ngTemplate"> </hello>
+
+<!-- <ng-template
+  ngFor
+  [ngForOf]="users"
+  let-user
+  let-idx="index"
+  let-total="count"
+  let-isFirst="first"
+  let-isLast="last"
+  let-isEven="even"
+  let-isOdd="odd"
+> -->
 <ng-template
   ngFor
   [ngForOf]="users"
@@ -87,3 +112,77 @@ Age : {{ user.age }}
   <br />
   <span>{{ user.name }} - {{ user.id }} - {{ user.phone }}</span> <br />
 </ng-template>
+<hello name="Class Binding"> </hello>
+<p>
+  <span style="color:red">Cach 1:*** Co dinh *** </span>
+  <br />
+  <span>box red-border yellow-background</span>
+</p>
+<div class="box red-border yellow-background"></div>
+
+<p>
+  <span style="color:red">Cach 2:*** Co dinh *** </span>
+  <br />
+  <span>hien thi tuy theo dieu kien</span>
+</p>
+<button (click)="isDanger = !isDanger">Danger</button>
+<br />
+<button (click)="isWarning = !isWarning">Warning</button>
+<br />
+<!-- <div
+  class="box"
+  [class.red-border]="isDanger"
+  [class.yellow-background]="isWarning"
+></div> -->
+<span style="color:red">Format 1: Class.ten-class</span>
+<br />
+<span>
+  class="box" [class.red-border]="isDanger"
+  [class.yellow-background]="isWarning"</span
+>
+<div
+  class="box"
+  [class.red-border]="isDanger"
+  [class.yellow-background]="isWarning"
+></div>
+<span style="color:red">Format 2: array co dinh</span>
+<br />
+<span>cai nay thuong duung trong dieu khien cua component.ts</span>
+<br />
+<span> class="box" [class]="['red-border', 'yellow-background']"> ></span>
+<div class="box" [class]="['red-border', 'yellow-background']"></div>
+
+<br />
+<span style="color:red">Format 3: OBJECT</span><br />
+<span>
+  "[class]="{{ 'red-border': isDanger, 'yellow-background': isWarning }""</span
+>
+<br />
+
+<button (click)="isDanger = !isDanger">Danger</button>
+<br />
+<button (click)="isWarning = !isWarning">Warning</button>
+<br />
+
+<div
+  class="box"
+  [class]="{ 'red-border': isDanger, 'yellow-background': isWarning }"
+></div>
+
+<br />
+<span style="color:red">Format 4: CACH HAY NHAT</span><br />
+
+<span
+  >Tao hang 1 class trong code behind, va chi gan no o template thoi. tuyet voi
+  :))</span
+><br />
+<button (click)="Show()">Show</button>
+<div [class]="Classes"></div>
+
+<hello name="COMPONENT INTERACTION"></hello>
+<button (click)="UpdateProgress()">Up progress</button>
+<app-progress-bar
+  [progress]="currentProgress"
+  [backgroundColor]="'gray'"
+  [progressColor]="'red'"
+></app-progress-bar>
