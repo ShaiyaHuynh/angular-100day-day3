@@ -1,0 +1,11 @@
+<app-author-detail
+  *ngFor="let author of authors"
+  [author]="author"
+  (SelectAuthor)="OnSelectAuthor($event)"
+  (DeleteAuthor)="OnDeleteAuthor($event)"
+>
+</app-author-detail>
+<br />
+<div *ngIf="selectedAuthor">
+  selected object is {{ selectedAuthor.id }} {{ selectedAuthor.firstName }}
+</div>
