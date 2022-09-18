@@ -18,7 +18,7 @@ export class AppComponent {
     age: 35,
   };
   // EVENT BIDING
-  ClickMe() {
-    console.log('Click me event handler');
+  Click(event: any) {
+    console.log('Click me event handler', event);
   }
 }

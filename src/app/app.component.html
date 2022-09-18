@@ -6,6 +6,6 @@
 <p>{{ user.name }}</p>
 <p>Age: {{ user.age }}</p>
 <input [type]="inputText" [value]="user.name" />
-<button type="button" (click)="ClickMe()">Click me !</button>
+<button type="button" (click)="Click($event)">Click me !</button>
 <br /><br />
-<input type="text" [ngModel]="name1" (ngModelChange)="name1 = $event" />
+<input type="text" [ngModel]="user.name" (ngModelChange)="user.name = $event" />
