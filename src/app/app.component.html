@@ -1,4 +1,8 @@
-<hello name="{{ name }}"></hello>
+<hello *ngIf="user.age >= 18; else under18" [name]="user.name"></hello>
+<ng-template #under18>
+  <hello name="you are too young to see this content"></hello>
+</ng-template>
+
 <p>test event biding = {{ name1 }}</p>
 <p>Start editing to see some magic happen :)</p>
 <!--{{exoression}}-->
@@ -8,4 +12,9 @@
 <input [type]="inputText" [value]="user.name" />
 <button type="button" (click)="Click($event)">Click me !</button>
 <br /><br />
-<input type="text" [ngModel]="user.name" (ngModelChange)="user.name = $event" />
+<input type="number" [ngModel]="user.age" (ngModelChange)="user.age = $event" />
+<br />
+<br />
+<button (click)="user.age = user.age - 1">-</button>
+Age : {{ user.age }}
+<button (click)="user.age = user.age + 1">+</button>

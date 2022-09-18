@@ -15,7 +15,7 @@ export class AppComponent {
 
   user = {
     name: 'Quynh',
-    age: 35,
+    age: 19,
   };
   // EVENT BIDING
   Click(event: any) {
