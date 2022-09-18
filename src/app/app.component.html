@@ -1,4 +1,11 @@
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p>test event biding = {{ name1 }}</p>
+<p>Start editing to see some magic happen :)</p>
+<!--{{exoression}}-->
+<p>{{ user }}</p>
+<p>{{ user.name }}</p>
+<p>Age: {{ user.age }}</p>
+<input [type]="inputText" [value]="user.name" />
+<button type="button" (click)="ClickMe()">Click me !</button>
+<br /><br />
+<input type="text" [ngModel]="name1" (ngModelChange)="name1 = $event" />
