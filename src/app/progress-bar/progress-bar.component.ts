@@ -60,6 +60,16 @@ export class ProgressBarComponent implements OnInit {
     // }
   }
 
+  changeColor = false;
+  ChangeColor() {
+    this.changeColor = !this.changeColor;
+    if (this.changeColor) {
+      this.progressColor = 'pink';
+    } else {
+      this.progressColor = 'blue';
+    }
+  }
+
   constructor() {}
 
   ngOnInit() {}

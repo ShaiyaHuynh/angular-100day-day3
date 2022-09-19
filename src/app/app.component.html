@@ -182,11 +182,16 @@ Age : {{ user.age }}
 <hello name="COMPONENT INTERACTION"></hello>
 <button (click)="UpdateProgress()">Up progress</button>
 <app-progress-bar
+  #progressBarChange
   [progress]="currentProgress"
   [backgroundColor]="'gray'"
   [progressColor]="'red'"
 ></app-progress-bar>
 <br />
 
+<button (click)="progressBarChange.ChangeColor()">Change color</button>
+<br />
 <hello name="PARENT LISTENS FOR CHILD EVENT"></hello>
 <app-author-list> </app-author-list>
+
+<input #focusText type="text" />
